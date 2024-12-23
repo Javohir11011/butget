@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
+import { ButgetModule } from './butget/butget.module';
 
 @Module({
-  imports: [],
+  imports: [ButgetModule],
   controllers: [],
   providers: [],
 })
