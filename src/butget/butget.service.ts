@@ -4,12 +4,23 @@ import { UpdateButgetDto } from './dto/update-butget.dto';
 
 @Injectable()
 export class ButgetService {
-  butget: CreateButgetDto[] = [];
+  butget: CreateButgetDto[] = [
+    {
+      id: 1,
+      startTime: new Date('2024-12-23T09:00:00.000Z'),
+      lesson: true,
+      eatMealPrice: 15.5,
+      doingHomework: new Date('2024-12-24T10:00:00.000Z'),
+      wastedTime: new Date('2024-12-24T11:30:00.000Z'),
+      spendendMoney: 25,
+      endTime: new Date('2024-12-24T20:00:00.000Z'),
+    },
+  ];
   async create(createButgetDto: CreateButgetDto) {
     const id = this.butget.length + 1;
     this.butget.push({ id, ...createButgetDto });
     return {
-      // createButgetId: id,
+      createButgetId: id,
       msg: 'creted butget',
     };
   }
